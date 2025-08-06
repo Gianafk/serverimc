@@ -1,12 +1,14 @@
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
-
 const PORT = 3230;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('pagina'));
-
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
@@ -22,7 +24,7 @@ function classificarIMC(imc) {
 }
 
 app.get('/', function (req, res){
-    res.send('Entrei na pagina principal');
+    res.sendFile(path.join(__dirname, 'pagina', 'oi.html'));
 })
 
 app.post('/calcular', (req, res) => {
