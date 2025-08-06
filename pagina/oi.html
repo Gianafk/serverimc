@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Informações</title>
+  <link rel="stylesheet" href="oi.css">
+</head>
+<body>
+<div id="tela1">
+ <h2>Calculadora IMC</h2>
+ </div>
+  <form action="/calcular" method="POST">
+    <label class="text">Nome:</label><br>
+    <input type="text" name="nome" class="input" placeholder="João Pedro de Alencar" required><br><br>
+
+    <label class="text">Altura (em metros):</label><br>
+    <input type="number" step="0.01" name="altura" class="input" placeholder="1,85" required><br><br>
+
+    <label class="text">Peso (em kg):</label><br>
+    <input type="number" step="0.1" name="peso" class="input" placeholder="180.5" required><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>
